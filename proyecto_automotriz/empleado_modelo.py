@@ -4,7 +4,14 @@ class Empleado_mod:
         self.apellido_empleado = apellido
         self.cedula_empleado = cedula
         self.celular_empleado = celular
+        print("Empleado creado como objeto " ) 
+        
+    def __str__(self):
+        return f"{self.nombre_empleado.strip()} {self.apellido_empleado.strip()} - Cédula: {self.cedula_empleado.strip()} - Celular: {self.celular_empleado.strip()}"
     
+    def __lt__(self, other):
+        return self.nombre_empleado.strip() < other.nombre_empleado.strip()
+        
     def set_nombre_empleado (self, nuevo_nombre ):
         self.nombre_empleado = nuevo_nombre 
         
@@ -30,7 +37,10 @@ class Empleado_mod:
         return self.celular_empleado
     
     def ver_info(self):
-        info = "Nombre empleado: " + self.nombre_empleado + "Apellido empleado : " + self.apellido_empleado 
-        info = info + "cedula empleado: " +  self.cedula_empleado + "celular empleado: " + self.celular_empleado
+        info = "Nombre empleado: " + self.nombre_empleado + "Apellido empleado : " + self.apellido_empleado + "cedula empleado: " +  self.cedula_empleado + "celular empleado: " + self.celular_empleado
         return info
         
+
+        
+
+
